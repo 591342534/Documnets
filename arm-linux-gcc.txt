@@ -1,0 +1,10 @@
+最近在安装韦东山的交叉编译器的时候，使用命令arm-linux-gcc -v,却提示以下问题，
+开始还以为是文件交叉编译器的配置路径不对，查看了，路径也是对的，但就是出现这个问题
+bash: /opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-gcc: 没有那个文件或目录 问题解决方案
+
+The problem has been solved, because I installed the amd64.iso linux system,so first must excuse apt-get install lsb-core,
+then you can excuse arm-linux-gcc -v
+大致是说linux系统是64位的，需要装载lsb-core包
+即执行 sudo apt-get install lsb-core ;再次运行即可
+
+安装完成之后，再执行命令arm-linux-gcc -v，这个命令就OK了。
